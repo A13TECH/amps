@@ -97,103 +97,40 @@
     .logo-lockup {
       display: inline-flex;
       align-items: center;
-      gap: 18px;
-      width: auto;
-      padding: 18px 24px 18px 18px;
+      justify-content: center;
+      width: min(560px, 58vw);
+      padding: 0;
       margin-bottom: 30px;
-      border-radius: 28px;
-      background: rgba(13, 17, 33, .82);
+      border-radius: 18px;
+      background: #070D1E;
       border: 1px solid rgba(0,229,211,.28);
       box-shadow: 0 24px 80px rgba(0,0,0,.30), 0 0 42px rgba(0,229,211,.16);
-    }
-
-    .logo-symbol {
-      width: 104px;
-      height: 104px;
       overflow: hidden;
-      flex: 0 0 auto;
-      border-radius: 26px;
-      background: #FFFFFF;
-      border: 1px solid rgba(255,255,255,.70);
-      box-shadow: 0 16px 36px rgba(0,0,0,.28);
     }
 
-    .logo-symbol img {
+    .logo-lockup img {
       display: block;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      max-width: none;
-    }
-
-    .logo-wordmark {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      line-height: 1;
-      white-space: nowrap;
-    }
-
-    .logo-title {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      font-weight: 900;
-      font-size: 54px;
-      letter-spacing: -.055em;
-    }
-
-    .logo-title .amps {
-      color: #F7FAFF;
-      text-shadow: 0 2px 18px rgba(255,255,255,.14);
-    }
-
-    .logo-title .tech {
-      color: var(--cyan);
-      text-shadow: 0 0 24px rgba(0,229,211,.22);
-    }
-
-    .logo-tagline {
-      color: var(--cyan);
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: .03em;
-      margin-top: 10px;
+      height: auto;
     }
 
     .header-logo {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      color: inherit;
-      background: transparent;
-      border: 0;
-      padding: 0;
-      font-size: 13px;
+      justify-content: center;
+      width: 156px;
+      border-radius: 8px;
+      background: #070D1E;
+      border: 1px solid rgba(0,229,211,.24);
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(0,0,0,.08);
     }
 
-    .header-logo .logo-symbol {
-      width: 34px;
-      height: 34px;
-      border-radius: 9px;
-      box-shadow: none;
+    .header-logo img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
-
-
-    .header-logo .mini-amps {
-      color: var(--white);
-      font-weight: 900;
-      letter-spacing: -.04em;
-    }
-
-    .header-logo .mini-tech {
-      color: var(--cyan);
-      font-weight: 900;
-      letter-spacing: -.04em;
-      margin-left: 3px;
-    }
-
-    .light .header-logo .mini-amps { color: var(--ink); }
 
     .light .brand { color: var(--ink); }
 
@@ -611,7 +548,7 @@
   <section class="slide">
     <div class="content cover">
       <div>
-        <div class="logo-lockup" aria-label="AMPS Tech — Tecnologia e Consultoria"><span class="logo-symbol"><img src="assets/logo-amps-tech-symbol.png" alt=""></span><span class="logo-wordmark"><span class="logo-title"><span class="amps">AMPS</span><span class="tech">TECH</span></span><span class="logo-tagline">Tecnologia e Consultoria</span></span></div>
+        <div class="logo-lockup"><img src="assets/logo-amps-tech-new.jpg" alt="AMPS Tech — Tecnologia e Consultoria"></div>
         <div class="eyebrow">Estrutura operacional de IA</div>
         <h1>Time AMPS Tech para estratégia, tecnologia e entrega digital.</h1>
         <div class="rule"></div>
@@ -630,7 +567,7 @@
 
   <section class="slide light">
     <div class="content">
-      <div class="header"><span class="header-logo"><span class="logo-symbol"><img src="assets/logo-amps-tech-symbol.png" alt=""></span><span><span class="mini-amps">AMPS</span><span class="mini-tech">TECH</span></span></span><span>01 / Visão geral</span><span>Modelo operacional</span></div>
+      <div class="header"><span class="header-logo"><img src="assets/logo-amps-tech-new.jpg" alt="AMPS Tech"></span><span>01 / Visão geral</span><span>Modelo operacional</span></div>
       <div class="eyebrow">Por que existe</div>
       <h2>Uma estrutura para acelerar decisões sem perder controle.</h2>
       <p class="lead">A AMPS Tech organiza seu trabalho digital em squads especializados. Cada área tem função, entrada, entrega esperada e critérios de qualidade, reduzindo ruído e aumentando previsibilidade.</p>
@@ -645,7 +582,7 @@
 
   <section class="slide">
     <div class="content">
-      <div class="header"><span class="header-logo"><span class="logo-symbol"><img src="assets/logo-amps-tech-symbol.png" alt=""></span><span><span class="mini-amps">AMPS</span><span class="mini-tech">TECH</span></span></span><span>02 / Squads</span><span>Mapa executivo</span></div>
+      <div class="header"><span class="header-logo"><img src="assets/logo-amps-tech-new.jpg" alt="AMPS Tech"></span><span>02 / Squads</span><span>Mapa executivo</span></div>
       <div class="eyebrow">Como o time se organiza</div>
       <h2>Squads conectados por governança, contexto e responsabilidade.</h2>
       <div class="squad-map">
@@ -663,7 +600,7 @@
 
   <section class="slide light">
     <div class="content">
-      <div class="header"><span class="header-logo"><span class="logo-symbol"><img src="assets/logo-amps-tech-symbol.png" alt=""></span><span><span class="mini-amps">AMPS</span><span class="mini-tech">TECH</span></span></span><span>03 / Fluxo</span><span>Da intenção à entrega</span></div>
+      <div class="header"><span class="header-logo"><img src="assets/logo-amps-tech-new.jpg" alt="AMPS Tech"></span><span>03 / Fluxo</span><span>Da intenção à entrega</span></div>
       <div class="eyebrow">Modelo operacional</div>
       <h2>Todo trabalho passa por contexto, execução especializada e validação.</h2>
       <div class="flow">
@@ -679,7 +616,7 @@
 
   <section class="slide">
     <div class="content">
-      <div class="header"><span class="header-logo"><span class="logo-symbol"><img src="assets/logo-amps-tech-symbol.png" alt=""></span><span><span class="mini-amps">AMPS</span><span class="mini-tech">TECH</span></span></span><span>04 / Orquestração</span><span>Governança e operação</span></div>
+      <div class="header"><span class="header-logo"><img src="assets/logo-amps-tech-new.jpg" alt="AMPS Tech"></span><span>04 / Orquestração</span><span>Governança e operação</span></div>
       <div class="eyebrow">Camada central</div>
       <h2>Tamys e Juliana mantêm a operação alinhada, rastreável e segura.</h2>
       <div class="grid-2">
@@ -698,7 +635,7 @@
 
   <section class="slide light">
     <div class="content">
-      <div class="header"><span class="header-logo"><span class="logo-symbol"><img src="assets/logo-amps-tech-symbol.png" alt=""></span><span><span class="mini-amps">AMPS</span><span class="mini-tech">TECH</span></span></span><span>05 / Marketing & Growth</span><span>Estratégia, aquisição e mensuração</span></div>
+      <div class="header"><span class="header-logo"><img src="assets/logo-amps-tech-new.jpg" alt="AMPS Tech"></span><span>05 / Marketing & Growth</span><span>Estratégia, aquisição e mensuração</span></div>
       <div class="eyebrow">AMPS AI Marketing Squad</div>
       <h2>Da estratégia ao aprendizado: uma squad para gerar demanda com controle.</h2>
       <div class="people-list">
@@ -716,7 +653,7 @@
 
   <section class="slide">
     <div class="content">
-      <div class="header"><span class="header-logo"><span class="logo-symbol"><img src="assets/logo-amps-tech-symbol.png" alt=""></span><span><span class="mini-amps">AMPS</span><span class="mini-tech">TECH</span></span></span><span>06 / Produto, UX e QA</span><span>Da ideia ao aceite</span></div>
+      <div class="header"><span class="header-logo"><img src="assets/logo-amps-tech-new.jpg" alt="AMPS Tech"></span><span>06 / Produto, UX e QA</span><span>Da ideia ao aceite</span></div>
       <div class="eyebrow">Produto e experiência</div>
       <h2>Requisitos claros, interface bem pensada e qualidade antes da entrega.</h2>
       <div class="flow" style="grid-template-columns: repeat(3, 1fr);">
@@ -735,7 +672,7 @@
 
   <section class="slide light">
     <div class="content">
-      <div class="header"><span class="header-logo"><span class="logo-symbol"><img src="assets/logo-amps-tech-symbol.png" alt=""></span><span><span class="mini-amps">AMPS</span><span class="mini-tech">TECH</span></span></span><span>07 / Tecnologia & IA</span><span>Stack operacional</span></div>
+      <div class="header"><span class="header-logo"><img src="assets/logo-amps-tech-new.jpg" alt="AMPS Tech"></span><span>07 / Tecnologia & IA</span><span>Stack operacional</span></div>
       <div class="eyebrow">Engenharia conectada</div>
       <h2>Arquitetura, código, dados, IA, segurança e operação trabalhando como sistema.</h2>
       <div class="system-stack">
@@ -758,7 +695,7 @@
 
   <section class="slide">
     <div class="content">
-      <div class="header"><span class="header-logo"><span class="logo-symbol"><img src="assets/logo-amps-tech-symbol.png" alt=""></span><span><span class="mini-amps">AMPS</span><span class="mini-tech">TECH</span></span></span><span>08 / Organograma</span><span>Estrutura executiva</span></div>
+      <div class="header"><span class="header-logo"><img src="assets/logo-amps-tech-new.jpg" alt="AMPS Tech"></span><span>08 / Organograma</span><span>Estrutura executiva</span></div>
       <div class="eyebrow">Responsabilidade e conexão</div>
       <h2>Uma cadeia simples: Alex decide, Tamys orquestra, squads entregam.</h2>
       <div class="org-chart">
@@ -783,7 +720,7 @@
 
   <section class="slide light">
     <div class="content">
-      <div class="header"><span class="header-logo"><span class="logo-symbol"><img src="assets/logo-amps-tech-symbol.png" alt=""></span><span><span class="mini-amps">AMPS</span><span class="mini-tech">TECH</span></span></span><span>09 / Critérios</span><span>Como a operação se protege</span></div>
+      <div class="header"><span class="header-logo"><img src="assets/logo-amps-tech-new.jpg" alt="AMPS Tech"></span><span>09 / Critérios</span><span>Como a operação se protege</span></div>
       <div class="eyebrow">Princípios de qualidade</div>
       <h2>A operação AMPS Tech foi desenhada para velocidade com responsabilidade.</h2>
       <div class="principles">
@@ -801,7 +738,7 @@
   <section class="slide">
     <div class="content cover">
       <div>
-        <div class="logo-lockup" aria-label="AMPS Tech — Tecnologia e Consultoria"><span class="logo-symbol"><img src="assets/logo-amps-tech-symbol.png" alt=""></span><span class="logo-wordmark"><span class="logo-title"><span class="amps">AMPS</span><span class="tech">TECH</span></span><span class="logo-tagline">Tecnologia e Consultoria</span></span></div>
+        <div class="logo-lockup"><img src="assets/logo-amps-tech-new.jpg" alt="AMPS Tech — Tecnologia e Consultoria"></div>
         <div class="eyebrow">Conclusão</div>
         <h1>Um time digital para entregar clareza, velocidade e controle.</h1>
         <div class="rule"></div>
