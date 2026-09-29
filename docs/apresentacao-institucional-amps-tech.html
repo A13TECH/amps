@@ -3,415 +3,713 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Time AMPS Tech — Inteligência Artificial</title>
+  <title>AMPS Tech — Estrutura Operacional de IA</title>
   <style>
-    :root { --cyan:#00E5D3; --cyan-dark:#00B4A6; --dark:#0D1121; --white:#FFFFFF; --ice:#DCE0F7; --gray:#374151; --muted:#4B5563; --line:#d7eef2; --soft:#f0fffd; --shadow:0 18px 50px rgba(13,17,33,.12); }
-    * { box-sizing:border-box; }
-    html, body { margin:0; padding:0; background:#f4fbfc; color:var(--dark); font-family:Arial, Helvetica, sans-serif; line-height:1.45; }
-    .page { width:210mm; min-height:297mm; margin:0 auto; padding:18mm; background:radial-gradient(circle at 88% 8%, rgba(0,229,211,.18), transparent 34%), linear-gradient(180deg,#fff 0%,#f9ffff 100%); page-break-after:always; position:relative; overflow:hidden; }
-    .page::after { content:""; position:absolute; right:-62mm; bottom:-62mm; width:142mm; height:142mm; border-radius:50%; border:22mm solid rgba(0,229,211,.08); z-index:0; }
-    .content { position:relative; z-index:1; }
-    .cover { display:flex; flex-direction:column; justify-content:center; text-align:center; min-height:297mm; }
-    .cover-logo { width:54mm; height:54mm; object-fit:contain; margin:0 auto 12mm; border-radius:50%; box-shadow:var(--shadow); background:white; }
-    .kicker { color:var(--cyan-dark); font-weight:800; text-transform:uppercase; letter-spacing:.18em; font-size:10pt; margin-bottom:5mm; }
-    h1 { font-size:34pt; line-height:1.05; margin:0; letter-spacing:-.04em; color:var(--dark); }
-    h1 span, h2 span { color:var(--cyan-dark); }
-    .subtitle { font-size:15pt; color:var(--muted); max-width:155mm; margin:8mm auto 0; }
-    .cover-footer { margin-top:24mm; color:var(--muted); font-size:10.5pt; }
-    .topbar { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding-bottom:5mm; margin-bottom:10mm; }
-    .mini-brand { display:flex; align-items:center; gap:4mm; font-weight:900; letter-spacing:-.03em; }
-    .mini-brand img { width:10mm; height:10mm; object-fit:contain; border-radius:50%; }
-    .section-label { font-size:9pt; color:var(--cyan-dark); font-weight:900; text-transform:uppercase; letter-spacing:.12em; }
-    h2 { font-size:25pt; line-height:1.1; margin:0 0 6mm; letter-spacing:-.04em; }
-    .summary-grid { display:grid; grid-template-columns:1fr 1fr; gap:4mm; margin-top:8mm; }
-    .summary-card, .info-card { border:1px solid var(--line); background:rgba(255,255,255,.90); border-radius:7mm; padding:5.5mm; box-shadow:0 8px 28px rgba(13,17,33,.06); }
-    .summary-card strong { color:var(--cyan-dark); display:block; margin-bottom:1mm; }
-    .summary-card span { color:var(--muted); font-size:9.5pt; }
-    .agent-layout { display:grid; grid-template-columns:72mm 1fr; gap:10mm; align-items:stretch; margin-top:10mm; }
-    .portrait { border:2px dashed rgba(0,180,166,.55); border-radius:9mm; background:linear-gradient(135deg, rgba(0,229,211,.12), rgba(255,255,255,.92)), repeating-linear-gradient(45deg, rgba(13,17,33,.035) 0 2px, transparent 2px 9px); min-height:132mm; padding:8mm; display:flex; align-items:center; justify-content:center; text-align:center; color:var(--cyan-dark); font-weight:900; font-size:13pt; }
-    .role-pill { display:inline-block; padding:2mm 4mm; border-radius:999px; background:var(--soft); color:var(--cyan-dark); font-weight:900; font-size:10pt; margin-bottom:5mm; border:1px solid rgba(0,229,211,.35); }
-    .fact { margin:0 0 5mm; padding-bottom:4mm; border-bottom:1px solid var(--line); }
-    .fact strong { display:block; color:var(--dark); margin-bottom:1mm; font-size:10pt; text-transform:uppercase; letter-spacing:.08em; }
-    .fact span { color:var(--muted); font-size:12.5pt; }
-    .org { font-family:"Courier New", monospace; background:#f4fffe; border:1px solid var(--line); border-radius:6mm; padding:7mm; font-size:10.5pt; white-space:pre-wrap; color:var(--dark); }
-    .note { background:var(--soft); border-left:4px solid var(--cyan); padding:5mm; border-radius:3mm; color:var(--muted); margin-top:8mm; font-size:11pt; }
-    .footer { position:absolute; left:18mm; right:18mm; bottom:10mm; display:flex; justify-content:space-between; color:#6b7280; font-size:9pt; z-index:2; }
-    @page { size:A4; margin:0; }
-    @media print { html, body { background:white; } .page { width:210mm; min-height:297mm; margin:0; box-shadow:none; page-break-after:always; print-color-adjust:exact; -webkit-print-color-adjust:exact; } .page:last-child { page-break-after:auto; } }
+    :root {
+      --ink: #0D1121;
+      --ink-2: #141A2E;
+      --panel: #181F35;
+      --cyan: #00E5D3;
+      --teal: #00B4A6;
+      --ice: #DCE0F7;
+      --white: #FFFFFF;
+      --muted: #AAB3D1;
+      --line: rgba(220, 224, 247, .18);
+      --line-strong: rgba(0, 229, 211, .42);
+      --paper: #F6F8FF;
+      --paper-ink: #111827;
+      --paper-muted: #4B5563;
+      --radius: 18px;
+      --shadow: 0 24px 80px rgba(0, 0, 0, .22);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      background: #0A0E1A;
+      color: var(--white);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      line-height: 1.38;
+    }
+
+    body { counter-reset: slide; }
+
+    .slide {
+      width: 297mm;
+      min-height: 210mm;
+      margin: 0 auto;
+      padding: 18mm 20mm;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(0, 229, 211, .16), transparent 34%),
+        radial-gradient(circle at 12% 88%, rgba(0, 180, 166, .12), transparent 38%),
+        linear-gradient(135deg, var(--ink) 0%, #10172A 58%, #09101F 100%);
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      counter-increment: slide;
+    }
+
+    .slide.light {
+      color: var(--paper-ink);
+      background:
+        radial-gradient(circle at 92% 6%, rgba(0, 229, 211, .16), transparent 30%),
+        linear-gradient(135deg, #FFFFFF 0%, #F7FAFF 100%);
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(220,224,247,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(220,224,247,.045) 1px, transparent 1px);
+      background-size: 22mm 22mm;
+      mask-image: linear-gradient(110deg, rgba(0,0,0,.55), transparent 70%);
+      pointer-events: none;
+    }
+
+    .slide.light::before {
+      background-image:
+        linear-gradient(rgba(13,17,33,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13,17,33,.045) 1px, transparent 1px);
+    }
+
+    .content { position: relative; z-index: 1; }
+
+    .cover {
+      display: flex;
+      min-height: calc(210mm - 36mm);
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .light .brand { color: var(--ink); }
+
+    .mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: conic-gradient(from 28deg, var(--cyan), var(--teal), var(--cyan), #ffffff 0 11%, var(--cyan) 13%);
+      box-shadow: 0 0 24px rgba(0, 229, 211, .34);
+      position: relative;
+      flex: 0 0 auto;
+    }
+
+    .mark::after {
+      content: "";
+      position: absolute;
+      width: 7px;
+      height: 29px;
+      left: 17px;
+      top: -2px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.94);
+      transform: rotate(16deg);
+    }
+
+    .eyebrow {
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      font-size: 70px;
+      line-height: .96;
+      max-width: 860px;
+      letter-spacing: -0.065em;
+      text-wrap: balance;
+    }
+
+    h2 {
+      font-size: 44px;
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+      max-width: 850px;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 20px;
+      letter-spacing: -.02em;
+      margin-bottom: 8px;
+    }
+
+    .lead {
+      color: var(--ice);
+      font-size: 22px;
+      max-width: 780px;
+      margin-top: 28px;
+      text-wrap: pretty;
+    }
+
+    .light .lead { color: var(--paper-muted); }
+
+    .accent { color: var(--cyan); }
+
+    .rule {
+      height: 2px;
+      width: 96px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+      margin: 28px 0;
+    }
+
+    .meta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 36px;
+    }
+
+    .chip {
+      border: 1px solid var(--line-strong);
+      color: var(--ice);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-size: 13px;
+      background: rgba(0, 229, 211, .06);
+    }
+
+    .light .chip {
+      color: var(--ink);
+      background: rgba(0, 229, 211, .09);
+      border-color: rgba(0, 180, 166, .35);
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18mm;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .light .header { color: var(--paper-muted); }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.045);
+      border-radius: var(--radius);
+      padding: 22px;
+      min-height: 128px;
+      box-shadow: 0 14px 44px rgba(0,0,0,.10);
+    }
+
+    .light .card {
+      background: rgba(255,255,255,.72);
+      border-color: rgba(13,17,33,.10);
+      box-shadow: 0 18px 48px rgba(13,17,33,.08);
+    }
+
+    .card p, .person p, .compact p, .principle p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .light .card p, .light .person p, .light .compact p, .light .principle p {
+      color: var(--paper-muted);
+    }
+
+    .num {
+      color: var(--cyan);
+      font-weight: 900;
+      font-size: 14px;
+      letter-spacing: .14em;
+      margin-bottom: 12px;
+    }
+
+    .squad-map {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1.2fr;
+      gap: 16px;
+      margin-top: 26px;
+      align-items: stretch;
+    }
+
+    .squad {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      background: rgba(255,255,255,.045);
+    }
+
+    .light .squad {
+      background: rgba(255,255,255,.74);
+      border-color: rgba(13,17,33,.10);
+    }
+
+    .members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .member {
+      font-size: 12px;
+      border-radius: 999px;
+      padding: 7px 9px;
+      color: var(--ice);
+      background: rgba(220,224,247,.08);
+      border: 1px solid rgba(220,224,247,.13);
+    }
+
+    .light .member {
+      color: var(--ink);
+      background: rgba(13,17,33,.045);
+      border-color: rgba(13,17,33,.08);
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .step {
+      border-top: 3px solid var(--cyan);
+      background: rgba(255,255,255,.05);
+      border-radius: 0 0 18px 18px;
+      padding: 20px 16px;
+      min-height: 155px;
+      position: relative;
+    }
+
+    .step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -16px;
+      top: 54px;
+      color: var(--cyan);
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .light .step {
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 14px 38px rgba(13,17,33,.06);
+    }
+
+    .people-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .person {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(255,255,255,.045);
+    }
+
+    .light .person {
+      background: rgba(255,255,255,.72);
+      border-color: rgba(13,17,33,.10);
+    }
+
+    .person strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .system-stack {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .layer {
+      display: grid;
+      grid-template-columns: 116px 1fr;
+      gap: 18px;
+      align-items: center;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.045);
+      border-radius: 16px;
+      margin-bottom: 10px;
+    }
+
+    .light .layer {
+      background: rgba(255,255,255,.76);
+      border-color: rgba(13,17,33,.10);
+    }
+
+    .tag {
+      color: var(--cyan);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .org-chart {
+      margin-top: 28px;
+      display: grid;
+      grid-template-rows: auto auto auto;
+      gap: 18px;
+    }
+
+    .org-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .org-node {
+      min-width: 170px;
+      text-align: center;
+      border: 1px solid var(--line-strong);
+      border-radius: 18px;
+      padding: 15px 18px;
+      background: rgba(0, 229, 211, .075);
+      color: var(--white);
+      font-weight: 800;
+    }
+
+    .light .org-node { color: var(--ink); }
+
+    .org-node small {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .light .org-node small { color: var(--paper-muted); }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .principle {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(13,17,33,.10);
+      background: rgba(255,255,255,.78);
+    }
+
+    .bullet {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: var(--ink);
+      background: linear-gradient(135deg, var(--cyan), var(--teal));
+    }
+
+    .footer {
+      position: absolute;
+      left: 20mm;
+      right: 20mm;
+      bottom: 11mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(220,224,247,.58);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .light .footer { color: rgba(13,17,33,.46); }
+
+    .footer::after {
+      content: counter(slide, decimal-leading-zero);
+      color: var(--cyan);
+      font-weight: 900;
+    }
+
+    .statement {
+      margin-top: 34px;
+      padding: 28px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(0,229,211,.14), rgba(255,255,255,.06));
+      border: 1px solid var(--line-strong);
+      font-size: 26px;
+      line-height: 1.22;
+      max-width: 880px;
+      letter-spacing: -.035em;
+    }
+
+    @page { size: A4 landscape; margin: 0; }
+
+    @media print {
+      html, body { background: white; }
+      .slide {
+        width: 297mm;
+        min-height: 210mm;
+        margin: 0;
+        box-shadow: none;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      .slide:last-child { page-break-after: auto; }
+    }
   </style>
 </head>
 <body>
-  <section class="page cover">
-    <div class="content">
-      <img class="cover-logo" src="assets/logo-amps-tech.jpg" alt="Logo AMPS Tech" />
-      <div class="kicker">AMPS TECH — Tecnologia e Consultoria</div>
-      <h1>Time AMPS Tech<br><span>Inteligência Artificial</span></h1>
-      <p class="subtitle">Apresentação institucional dos agentes que compõem a operação digital da AMPS Tech: estratégia, marketing, produto, engenharia, segurança, dados, qualidade, DevOps e vendas consultivas.</p>
-      <p class="cover-footer">Documento autocontido para impressão em PDF. Esta versão já inclui ilustrações vetoriais locais do time. Os prompts em <strong>docs/prompts-caricaturas-time-amps-tech.md</strong> ficam como opção para substituir por caricaturas premium quando o gerador de imagem estiver habilitado.</p>
-    </div>
-  </section>
-  <section class="page">
-    <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Sumário</div></header>
-      <h2>Mapa do <span>time</span></h2>
-      <div class="summary-grid"><div class="summary-card"><strong>Tamys</strong>Chief of Staff / Orquestradora<br><span>Alex</span></div><div class="summary-card"><strong>Juliana</strong>Operations Lead<br><span>Tamys</span></div><div class="summary-card"><strong>Camila</strong>Chief Marketing Officer<br><span>Tamys</span></div><div class="summary-card"><strong>Jonathan</strong>Copywriter<br><span>Camila CMO</span></div><div class="summary-card"><strong>Bia</strong>Social Media Strategist<br><span>Camila CMO</span></div><div class="summary-card"><strong>Lucas</strong>Growth &amp; Performance<br><span>Camila CMO</span></div><div class="summary-card"><strong>Clara</strong>SEO + GEO Specialist<br><span>Camila CMO</span></div><div class="summary-card"><strong>Hugo</strong>Marketing Intelligence<br><span>Camila CMO</span></div><div class="summary-card"><strong>Clone do Dono</strong>Social Selling / Qualificação<br><span>Tamys. Não pertence à squad de Marketing.</span></div><div class="summary-card"><strong>Caio</strong>Software Architect<br><span>Tamys</span></div><div class="summary-card"><strong>Marina</strong>Product Manager<br><span>Juliana Ops</span></div><div class="summary-card"><strong>Lara</strong>Product Designer UX/UI<br><span>Juliana Ops</span></div><div class="summary-card"><strong>Rafael</strong>Quality Engineer<br><span>Juliana Ops</span></div><div class="summary-card"><strong>Paulo</strong>Full-Stack Developer<br><span>Caio Architect</span></div><div class="summary-card"><strong>Felipe</strong>Frontend Engineer<br><span>Caio Architect</span></div><div class="summary-card"><strong>Bruno</strong>Backend Engineer<br><span>Caio Architect</span></div><div class="summary-card"><strong>Diego</strong>Database Engineer<br><span>Caio Architect</span></div><div class="summary-card"><strong>Nina</strong>AI Engineer &amp; Agent Architect<br><span>Caio Architect</span></div><div class="summary-card"><strong>Sofia</strong>AppSec Engineer<br><span>Caio Architect</span></div><div class="summary-card"><strong>Gustavo</strong>DevOps / SRE<br><span>Caio Architect</span></div></div>
-    </div>
-    <footer class="footer"><span>AMPS Tech</span><span>Sumário</span></footer>
-  </section>
-  
-  <section class="page agent-page">
-    <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Orquestração</div></header>
-      <h2>Tamys <span>— Chief of Staff / Orquestradora</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/tamys.png" alt="Ilustração de Tamys — Orquestração" /></div>
-        <article class="info-card">
-          <div class="role-pill">Orquestração</div>
-          <p class="fact"><strong>Especialidade</strong><span>Governança, coordenação de agentes, contexto, segurança operacional e entrega final para Alex.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Receber objetivos de Alex, resolver contexto, delegar com rastreabilidade e consolidar entregas verificadas.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Alex</span></p>
-        </article>
+  <section class="slide">
+    <div class="content cover">
+      <div>
+        <div class="brand"><span class="mark"></span> AMPS Tech</div>
+        <div class="eyebrow">Estrutura operacional de IA</div>
+        <h1>Time AMPS Tech para estratégia, tecnologia e entrega digital.</h1>
+        <div class="rule"></div>
+        <p class="lead">Um modelo de operação com agentes especializados, governança clara e squads conectados para transformar objetivos de negócio em execução rastreável.</p>
+        <div class="meta-row">
+          <span class="chip">Orquestração</span>
+          <span class="chip">Marketing & Growth</span>
+          <span class="chip">Produto & UX</span>
+          <span class="chip">Engenharia & IA</span>
+          <span class="chip">Segurança & Qualidade</span>
+        </div>
       </div>
     </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Tamys</span></footer>
+    <div class="footer"><span>AMPS Tech — Tecnologia e Consultoria</span></div>
   </section>
-  <section class="page agent-page">
+
+  <section class="slide light">
     <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Operações</div></header>
-      <h2>Juliana <span>— Operations Lead</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/juliana.png" alt="Ilustração de Juliana — Ops" /></div>
-        <article class="info-card">
-          <div class="role-pill">Operações</div>
-          <p class="fact"><strong>Especialidade</strong><span>Processos internos, workflows, design system, coordenação operacional e organização do trabalho.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Apoiar Tamys na coordenação operacional e garantir que fluxos internos sigam padrão e prioridade.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Tamys</span></p>
-        </article>
+      <div class="header"><span>01 / Visão geral</span><span>Modelo operacional</span></div>
+      <div class="eyebrow">Por que existe</div>
+      <h2>Uma estrutura para acelerar decisões sem perder controle.</h2>
+      <p class="lead">A AMPS Tech organiza seu trabalho digital em squads especializados. Cada área tem função, entrada, entrega esperada e critérios de qualidade, reduzindo ruído e aumentando previsibilidade.</p>
+      <div class="grid-3">
+        <div class="card"><div class="num">01</div><h3>Clareza operacional</h3><p>Objetivos entram por uma camada central de orquestração antes de virar tarefa técnica, campanha ou entrega.</p></div>
+        <div class="card"><div class="num">02</div><h3>Especialização por função</h3><p>Marketing, produto, engenharia, segurança, dados e operação trabalham com responsabilidades definidas.</p></div>
+        <div class="card"><div class="num">03</div><h3>Validação antes da entrega</h3><p>Qualidade, segurança, fontes e evidências fazem parte do fluxo, não são etapa opcional no final.</p></div>
       </div>
     </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Juliana</span></footer>
+    <div class="footer"><span>Estrutura AMPS Tech</span></div>
   </section>
-  <section class="page agent-page">
+
+  <section class="slide">
     <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Marketing</div></header>
-      <h2>Camila <span>— Chief Marketing Officer</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/camila.png" alt="Ilustração de Camila — CMO" /></div>
-        <article class="info-card">
-          <div class="role-pill">Marketing</div>
-          <p class="fact"><strong>Especialidade</strong><span>Estratégia de marketing: ICP, oferta, posicionamento, canais, funil, campanha, conteúdo e métricas.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Transformar objetivos de negócio em planos executáveis e coordenar a Marketing Squad.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Tamys</span></p>
-        </article>
+      <div class="header"><span>02 / Squads</span><span>Mapa executivo</span></div>
+      <div class="eyebrow">Como o time se organiza</div>
+      <h2>Squads conectados por governança, contexto e responsabilidade.</h2>
+      <div class="squad-map">
+        <div class="squad"><h3>Orquestração</h3><p class="lead" style="font-size:15px;margin-top:0">Camada de coordenação, prioridade, contexto e entrega consolidada.</p><div class="members"><span class="member">Alex</span><span class="member">Tamys</span><span class="member">Juliana Ops</span></div></div>
+        <div class="squad"><h3>Marketing & Growth</h3><p class="lead" style="font-size:15px;margin-top:0">Estratégia, conteúdo, aquisição, SEO/GEO e inteligência de funil.</p><div class="members"><span class="member">Camila</span><span class="member">Jonathan</span><span class="member">Bia</span><span class="member">Lucas</span><span class="member">Clara</span><span class="member">Hugo</span></div></div>
+        <div class="squad"><h3>Tecnologia & IA</h3><p class="lead" style="font-size:15px;margin-top:0">Arquitetura, frontend, backend, dados, IA, segurança e DevOps.</p><div class="members"><span class="member">Caio</span><span class="member">Paulo</span><span class="member">Felipe</span><span class="member">Bruno</span><span class="member">Diego</span><span class="member">Nina</span><span class="member">Sofia</span><span class="member">Gustavo</span></div></div>
+      </div>
+      <div class="grid-2">
+        <div class="card"><h3>Produto, UX e Qualidade</h3><p>Marina, Lara e Rafael estruturam requisito, experiência e validação antes de qualquer release relevante.</p></div>
+        <div class="card"><h3>Fronteira Marketing → Vendas</h3><p>Clone do Dono recebe interesse gerado pela operação, qualifica e transforma em oportunidade comercial.</p></div>
       </div>
     </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Camila</span></footer>
+    <div class="footer"><span>Mapa de squads</span></div>
   </section>
-  <section class="page agent-page">
+
+  <section class="slide light">
     <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Marketing</div></header>
-      <h2>Jonathan <span>— Copywriter</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/jonathan.png" alt="Ilustração de Jonathan — Copy" /></div>
-        <article class="info-card">
-          <div class="role-pill">Marketing</div>
-          <p class="fact"><strong>Especialidade</strong><span>Landing pages, anúncios, e-mails, WhatsApp, scripts, carrosséis, cases, headlines e CTAs.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Transformar briefing de Camila em copy persuasiva, fiel à Marketing Brain e sem claims inventados.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Camila CMO</span></p>
-        </article>
+      <div class="header"><span>03 / Fluxo</span><span>Da intenção à entrega</span></div>
+      <div class="eyebrow">Modelo operacional</div>
+      <h2>Todo trabalho passa por contexto, execução especializada e validação.</h2>
+      <div class="flow">
+        <div class="step"><div class="num">01</div><h3>Objetivo</h3><p>Alex define necessidade, prioridade ou direção de negócio.</p></div>
+        <div class="step"><div class="num">02</div><h3>Orquestração</h3><p>Tamys organiza contexto, escopo, risco e responsáveis.</p></div>
+        <div class="step"><div class="num">03</div><h3>Squads</h3><p>Especialistas executam por área com contratos claros.</p></div>
+        <div class="step"><div class="num">04</div><h3>Validação</h3><p>QA, segurança, dados e revisão bloqueiam fragilidades.</p></div>
+        <div class="step"><div class="num">05</div><h3>Entrega</h3><p>Resultado volta consolidado com evidências e próximos passos.</p></div>
       </div>
     </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Jonathan</span></footer>
+    <div class="footer"><span>Fluxo operacional</span></div>
   </section>
-  <section class="page agent-page">
+
+  <section class="slide">
     <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Marketing</div></header>
-      <h2>Bia <span>— Social Media Strategist</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/bia.png" alt="Ilustração de Bia — Social" /></div>
-        <article class="info-card">
-          <div class="role-pill">Marketing</div>
-          <p class="fact"><strong>Especialidade</strong><span>Calendário editorial multi-canal para Instagram, LinkedIn, Facebook e Google Business Profile.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Planejar conteúdos com objetivo de funil explícito: Awareness, Autoridade, Consideração, Lead e Conversão.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Camila CMO</span></p>
-        </article>
+      <div class="header"><span>04 / Orquestração</span><span>Governança e operação</span></div>
+      <div class="eyebrow">Camada central</div>
+      <h2>Tamys e Juliana mantêm a operação alinhada, rastreável e segura.</h2>
+      <div class="grid-2">
+        <div class="card"><h3>Tamys — Chief of Staff / Orquestradora</h3><p>Recebe objetivos, entende contexto, aplica regras de segurança, escolhe responsáveis, coordena execução e entrega resultado verificado para Alex.</p></div>
+        <div class="card"><h3>Juliana Ops — Operations Lead</h3><p>Organiza processos, workflows, prioridades operacionais e padronização das entregas internas.</p></div>
+      </div>
+      <div class="grid-4">
+        <div class="card"><h3>Contexto</h3><p>Centraliza informação útil antes da execução.</p></div>
+        <div class="card"><h3>Prioridade</h3><p>Transforma demanda em ordem de trabalho.</p></div>
+        <div class="card"><h3>Risco</h3><p>Identifica pontos que exigem aprovação.</p></div>
+        <div class="card"><h3>Evidência</h3><p>Separa feito, testado e inferido.</p></div>
       </div>
     </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Bia</span></footer>
+    <div class="footer"><span>Governança operacional</span></div>
   </section>
-  <section class="page agent-page">
+
+  <section class="slide light">
     <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Marketing</div></header>
-      <h2>Lucas <span>— Growth &amp; Performance</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/lucas.png" alt="Ilustração de Lucas — Growth" /></div>
-        <article class="info-card">
-          <div class="role-pill">Marketing</div>
-          <p class="fact"><strong>Especialidade</strong><span>Google Ads, Meta Ads, funis, CRO, testes A/B, públicos, remarketing e métricas de aquisição.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Planejar aquisição mensurável e recomendar orçamento, sem executar gasto real sem aprovação de Alex.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Camila CMO</span></p>
-        </article>
+      <div class="header"><span>05 / Marketing & Growth</span><span>Estratégia, aquisição e mensuração</span></div>
+      <div class="eyebrow">AMPS AI Marketing Squad</div>
+      <h2>Da estratégia ao aprendizado: uma squad para gerar demanda com controle.</h2>
+      <div class="people-list">
+        <div class="person"><strong>Camila CMO</strong><p>Estratégia, ICP, posicionamento, canais e plano de campanha.</p></div>
+        <div class="person"><strong>Jonathan Copy</strong><p>Copy para landing pages, anúncios, e-mail, WhatsApp e conversão.</p></div>
+        <div class="person"><strong>Bia Social</strong><p>Calendário editorial e distribuição social com objetivo de funil.</p></div>
+        <div class="person"><strong>Lucas Growth</strong><p>Mídia paga, funis, testes A/B, públicos e performance.</p></div>
+        <div class="person"><strong>Clara SEO/GEO</strong><p>Busca orgânica, SEO local, estrutura de conteúdo e otimização para IA.</p></div>
+        <div class="person"><strong>Hugo Analytics</strong><p>Métricas, CPL, CAC, gargalos, tracking e recomendações de otimização.</p></div>
+      </div>
+      <div class="statement">A squad de Marketing não promete resultado sem dado: ela planeja, executa com aprovação e mede com fonte.</div>
+    </div>
+    <div class="footer"><span>Marketing & Growth</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="header"><span>06 / Produto, UX e QA</span><span>Da ideia ao aceite</span></div>
+      <div class="eyebrow">Produto e experiência</div>
+      <h2>Requisitos claros, interface bem pensada e qualidade antes da entrega.</h2>
+      <div class="flow" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="step"><div class="num">PRD</div><h3>Marina Product</h3><p>Transforma pedido em backlog, user stories, critérios de aceite e prioridades.</p></div>
+        <div class="step"><div class="num">UX/UI</div><h3>Lara UX</h3><p>Define fluxos, wireframes, responsividade, acessibilidade e design system.</p></div>
+        <div class="step"><div class="num">QA</div><h3>Rafael QA</h3><p>Valida testes, regressão, smoke, critérios de aceite e bloqueia falhas críticas.</p></div>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h3>Entrada</h3><p>Objetivo de negócio, restrições, público, stack e escopo.</p></div>
+        <div class="card"><h3>Entrega</h3><p>Requisitos, telas, critérios de aceite e plano de validação.</p></div>
+        <div class="card"><h3>Qualidade</h3><p>Sem aceite claro, sem release confiável.</p></div>
       </div>
     </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Lucas</span></footer>
+    <div class="footer"><span>Produto, UX e QA</span></div>
   </section>
-  <section class="page agent-page">
+
+  <section class="slide light">
     <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Marketing</div></header>
-      <h2>Clara <span>— SEO + GEO Specialist</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/clara.png" alt="Ilustração de Clara — SEO" /></div>
-        <article class="info-card">
-          <div class="role-pill">Marketing</div>
-          <p class="fact"><strong>Especialidade</strong><span>Busca orgânica, SEO local, estrutura de conteúdo, dados estruturados e otimização para buscas por IA.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Criar briefs de SEO/GEO para Jonathan produzir conteúdo com base em dados reais da Marketing Brain.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Camila CMO</span></p>
-        </article>
+      <div class="header"><span>07 / Tecnologia & IA</span><span>Stack operacional</span></div>
+      <div class="eyebrow">Engenharia conectada</div>
+      <h2>Arquitetura, código, dados, IA, segurança e operação trabalhando como sistema.</h2>
+      <div class="system-stack">
+        <div>
+          <div class="layer"><span class="tag">Arquitetura</span><div><strong>Caio Architect</strong><p>Decisões técnicas, módulos, integrações, ADRs e contratos.</p></div></div>
+          <div class="layer"><span class="tag">Frontend</span><div><strong>Felipe Frontend</strong><p>Interfaces, componentes, responsividade e experiência implementada.</p></div></div>
+          <div class="layer"><span class="tag">Backend</span><div><strong>Bruno Backend</strong><p>APIs, autenticação, regras críticas, webhooks e integrações.</p></div></div>
+          <div class="layer"><span class="tag">Full-stack</span><div><strong>Paulo Dev</strong><p>Execução transversal, prototipagem, debug e automações técnicas.</p></div></div>
+        </div>
+        <div>
+          <div class="layer"><span class="tag">Dados</span><div><strong>Diego Data</strong><p>Modelagem, RLS, migrations, índices, integridade e performance.</p></div></div>
+          <div class="layer"><span class="tag">IA</span><div><strong>Nina AI</strong><p>Agentes, RAG, embeddings, guardrails, avaliação e custo.</p></div></div>
+          <div class="layer"><span class="tag">Segurança</span><div><strong>Sofia Security</strong><p>AppSec, LGPD, OWASP, secrets, autenticação e autorização.</p></div></div>
+          <div class="layer"><span class="tag">DevOps</span><div><strong>Gustavo DevOps</strong><p>CI/CD, ambientes, backups, observabilidade, staging e rollback.</p></div></div>
+        </div>
       </div>
     </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Clara</span></footer>
+    <div class="footer"><span>Tecnologia & IA</span></div>
   </section>
-  <section class="page agent-page">
+
+  <section class="slide">
     <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Marketing</div></header>
-      <h2>Hugo <span>— Marketing Intelligence</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/hugo.png" alt="Ilustração de Hugo — Analytics" /></div>
-        <article class="info-card">
-          <div class="role-pill">Marketing</div>
-          <p class="fact"><strong>Especialidade</strong><span>Medição de funil, CPL, CAC, conversões, gargalos, tracking e insights de otimização.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Reportar métricas reais com fonte, calcular indicadores e orientar Camila no próximo ciclo.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Camila CMO</span></p>
-        </article>
+      <div class="header"><span>08 / Organograma</span><span>Estrutura executiva</span></div>
+      <div class="eyebrow">Responsabilidade e conexão</div>
+      <h2>Uma cadeia simples: Alex decide, Tamys orquestra, squads entregam.</h2>
+      <div class="org-chart">
+        <div class="org-row"><div class="org-node">Alex<small>Direção e aprovação</small></div></div>
+        <div class="org-row"><div class="org-node">Tamys<small>Orquestração geral</small></div></div>
+        <div class="org-row">
+          <div class="org-node">Juliana Ops<small>Operação, produto, UX e QA</small></div>
+          <div class="org-node">Camila CMO<small>Marketing & Growth</small></div>
+          <div class="org-node">Caio Architect<small>Tecnologia & IA</small></div>
+          <div class="org-node">Clone do Dono<small>Marketing → Vendas</small></div>
+        </div>
+      </div>
+      <div class="grid-4">
+        <div class="card"><h3>Operação</h3><p>Marina, Lara e Rafael.</p></div>
+        <div class="card"><h3>Marketing</h3><p>Jonathan, Bia, Lucas, Clara e Hugo.</p></div>
+        <div class="card"><h3>Tech</h3><p>Paulo, Felipe, Bruno, Diego, Nina, Sofia e Gustavo.</p></div>
+        <div class="card"><h3>Comercial</h3><p>Qualificação consultiva e passagem de oportunidade.</p></div>
       </div>
     </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Hugo</span></footer>
+    <div class="footer"><span>Organograma executivo</span></div>
   </section>
-  <section class="page agent-page">
+
+  <section class="slide light">
     <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Marketing → Vendas</div></header>
-      <h2>Clone do Dono <span>— Social Selling / Qualificação</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/clone-do-dono.png" alt="Ilustração de Clone — Vendas" /></div>
-        <article class="info-card">
-          <div class="role-pill">Marketing → Vendas</div>
-          <p class="fact"><strong>Especialidade</strong><span>Atendimento consultivo, qualificação SPIN/BANT, follow-up, pipeline e passagem de oportunidade.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Receber leads da squad, qualificar e entregar oportunidades para Vendas/Alex.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Tamys. Não pertence à squad de Marketing.</span></p>
-        </article>
+      <div class="header"><span>09 / Critérios</span><span>Como a operação se protege</span></div>
+      <div class="eyebrow">Princípios de qualidade</div>
+      <h2>A operação AMPS Tech foi desenhada para velocidade com responsabilidade.</h2>
+      <div class="principles">
+        <div class="principle"><div class="bullet">1</div><div><h3>Responsável claro</h3><p>Cada entrega tem dono, escopo e critério de aceite.</p></div></div>
+        <div class="principle"><div class="bullet">2</div><div><h3>Arquitetura antes de escala</h3><p>Decisões técnicas relevantes passam por análise antes de implementação.</p></div></div>
+        <div class="principle"><div class="bullet">3</div><div><h3>Segurança bloqueia risco</h3><p>Achados críticos não são ignorados para acelerar entrega.</p></div></div>
+        <div class="principle"><div class="bullet">4</div><div><h3>Métrica com fonte</h3><p>Dados, CPL, CAC e funil precisam de origem e cálculo rastreável.</p></div></div>
+        <div class="principle"><div class="bullet">5</div><div><h3>Aprovação em ações sensíveis</h3><p>Gasto, publicação, produção e decisões críticas exigem autorização explícita.</p></div></div>
+        <div class="principle"><div class="bullet">6</div><div><h3>Evidência na entrega</h3><p>O relatório diferencia verificado, feito não testado e inferido.</p></div></div>
       </div>
     </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Clone do Dono</span></footer>
+    <div class="footer"><span>Critérios operacionais</span></div>
   </section>
-  <section class="page agent-page">
-    <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Tecnologia</div></header>
-      <h2>Caio <span>— Software Architect</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/caio.png" alt="Ilustração de Caio — Architect" /></div>
-        <article class="info-card">
-          <div class="role-pill">Tecnologia</div>
-          <p class="fact"><strong>Especialidade</strong><span>Arquitetura, stack, multi-tenancy, módulos, contratos de API, ADRs e decisões técnicas.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Definir arquitetura e validar decisões técnicas antes de desenvolvimento relevante.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Tamys</span></p>
-        </article>
+
+  <section class="slide">
+    <div class="content cover">
+      <div>
+        <div class="brand"><span class="mark"></span> AMPS Tech</div>
+        <div class="eyebrow">Conclusão</div>
+        <h1>Um time digital para entregar clareza, velocidade e controle.</h1>
+        <div class="rule"></div>
+        <p class="lead">A AMPS Tech posiciona sua operação de IA como extensão estratégica do negócio: organizada por squads, protegida por governança e orientada a entregas verificáveis.</p>
+        <div class="meta-row">
+          <span class="chip">Clareza antes da execução</span>
+          <span class="chip">Especialistas por domínio</span>
+          <span class="chip">Qualidade com evidência</span>
+        </div>
       </div>
     </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Caio</span></footer>
-  </section>
-  <section class="page agent-page">
-    <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Produto</div></header>
-      <h2>Marina <span>— Product Manager</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/marina.png" alt="Ilustração de Marina — Product" /></div>
-        <article class="info-card">
-          <div class="role-pill">Produto</div>
-          <p class="fact"><strong>Especialidade</strong><span>PRD, backlog, EPICs, user stories, critérios de aceite, edge cases e prioridades.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Transformar pedidos vagos em requisitos claros antes de UX, arquitetura e desenvolvimento.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Juliana Ops</span></p>
-        </article>
-      </div>
-    </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Marina</span></footer>
-  </section>
-  <section class="page agent-page">
-    <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">UX/UI</div></header>
-      <h2>Lara <span>— Product Designer UX/UI</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/lara.png" alt="Ilustração de Lara — UX/UI" /></div>
-        <article class="info-card">
-          <div class="role-pill">UX/UI</div>
-          <p class="fact"><strong>Especialidade</strong><span>Fluxos, wireframes, responsividade, acessibilidade, estados de interface e design system.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Definir experiência e interface antes da implementação visual ou técnica.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Juliana Ops</span></p>
-        </article>
-      </div>
-    </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Lara</span></footer>
-  </section>
-  <section class="page agent-page">
-    <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">QA</div></header>
-      <h2>Rafael <span>— Quality Engineer</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/rafael.png" alt="Ilustração de Rafael — QA" /></div>
-        <article class="info-card">
-          <div class="role-pill">QA</div>
-          <p class="fact"><strong>Especialidade</strong><span>Testes unitários, integração, E2E, regressão, smoke tests e critérios de aceite.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Validar entregas e bloquear release quando QA falhar.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Juliana Ops</span></p>
-        </article>
-      </div>
-    </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Rafael</span></footer>
-  </section>
-  <section class="page agent-page">
-    <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Desenvolvimento</div></header>
-      <h2>Paulo <span>— Full-Stack Developer</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/paulo.png" alt="Ilustração de Paulo — Full-stack" /></div>
-        <article class="info-card">
-          <div class="role-pill">Desenvolvimento</div>
-          <p class="fact"><strong>Especialidade</strong><span>Código, APIs, deploy, infraestrutura, debug, testes, Git, automações técnicas e Remotion.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Executar tarefas técnicas transversais, apoio geral e prototipagem rápida com validação.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Caio Architect</span></p>
-        </article>
-      </div>
-    </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Paulo</span></footer>
-  </section>
-  <section class="page agent-page">
-    <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Frontend</div></header>
-      <h2>Felipe <span>— Frontend Engineer</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/felipe.png" alt="Ilustração de Felipe — Frontend" /></div>
-        <article class="info-card">
-          <div class="role-pill">Frontend</div>
-          <p class="fact"><strong>Especialidade</strong><span>React, Next.js, Vite, TypeScript, Tailwind, shadcn/ui, Zustand, React Query e componentes.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Implementar interfaces a partir de Lara UX e contratos definidos por Caio.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Caio Architect</span></p>
-        </article>
-      </div>
-    </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Felipe</span></footer>
-  </section>
-  <section class="page agent-page">
-    <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Backend</div></header>
-      <h2>Bruno <span>— Backend Engineer</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/bruno.png" alt="Ilustração de Bruno — Backend" /></div>
-        <article class="info-card">
-          <div class="role-pill">Backend</div>
-          <p class="fact"><strong>Especialidade</strong><span>APIs REST, Node/TypeScript, autenticação, filas, webhooks, integrações e regras críticas.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Implementar backend seguro a partir da arquitetura aprovada.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Caio Architect</span></p>
-        </article>
-      </div>
-    </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Bruno</span></footer>
-  </section>
-  <section class="page agent-page">
-    <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Dados</div></header>
-      <h2>Diego <span>— Database Engineer</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/diego.png" alt="Ilustração de Diego — Data" /></div>
-        <article class="info-card">
-          <div class="role-pill">Dados</div>
-          <p class="fact"><strong>Especialidade</strong><span>PostgreSQL, Supabase, RLS, functions, triggers, RPCs, migrations, índices e performance.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Garantir modelagem, isolamento, integridade e performance da camada de dados.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Caio Architect</span></p>
-        </article>
-      </div>
-    </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Diego</span></footer>
-  </section>
-  <section class="page agent-page">
-    <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">IA</div></header>
-      <h2>Nina <span>— AI Engineer &amp; Agent Architect</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/nina.png" alt="Ilustração de Nina — AI" /></div>
-        <article class="info-card">
-          <div class="role-pill">IA</div>
-          <p class="fact"><strong>Especialidade</strong><span>LLMs, agentes, RAG, MCP, embeddings, function calling, memória, avaliação, guardrails e FinOps.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Projetar camadas de IA confiáveis, seguras, mensuráveis e economicamente viáveis.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Caio Architect</span></p>
-        </article>
-      </div>
-    </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Nina</span></footer>
-  </section>
-  <section class="page agent-page">
-    <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Segurança</div></header>
-      <h2>Sofia <span>— AppSec Engineer</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/sofia.png" alt="Ilustração de Sofia — Security" /></div>
-        <article class="info-card">
-          <div class="role-pill">Segurança</div>
-          <p class="fact"><strong>Especialidade</strong><span>Autenticação, autorização, RLS, OWASP Top 10, LGPD, secrets, rate limiting e dependências.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Revisar riscos e bloquear produção em achados HIGH ou CRITICAL.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Caio Architect</span></p>
-        </article>
-      </div>
-    </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Sofia</span></footer>
-  </section>
-  <section class="page agent-page">
-    <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">DevOps</div></header>
-      <h2>Gustavo <span>— DevOps / SRE</span></h2>
-      <div class="agent-layout">
-        <div class="portrait"><img src="assets/agentes/gustavo.png" alt="Ilustração de Gustavo — DevOps" /></div>
-        <article class="info-card">
-          <div class="role-pill">DevOps</div>
-          <p class="fact"><strong>Especialidade</strong><span>CI/CD, ambientes, backups, monitoramento, rollback, staging e produção.</span></p>
-          <p class="fact"><strong>Principal responsabilidade</strong><span>Controlar pipeline de deploy e garantir que produção só avance com aprovação explícita.</span></p>
-          <p class="fact"><strong>Reporta a</strong><span>Caio Architect</span></p>
-        </article>
-      </div>
-    </div>
-    <footer class="footer"><span>Time AMPS Tech</span><span>Gustavo</span></footer>
-  </section>
-  <section class="page">
-    <div class="content">
-      <header class="topbar"><div class="mini-brand"><img src="assets/logo-amps-tech.jpg" alt="AMPS Tech" /> AMPS TECH</div><div class="section-label">Organograma</div></header>
-      <h2>Hierarquia <span>AMPS Tech AI Team</span></h2>
-      <div class="org">ALEX
-└── TAMYS — Chief of Staff / Orquestradora
-    ├── JULIANA OPS
-    │   ├── Marina Product
-    │   ├── Lara UX
-    │   └── Rafael QA
-    │
-    ├── CAMILA CMO — Marketing Lead
-    │   ├── Jonathan Copy
-    │   ├── Bia Social
-    │   ├── Lucas Growth
-    │   ├── Clara SEO/GEO
-    │   └── Hugo Analytics
-    │       (planned: Leo Creative, Rebeca Video, Pedro CRM)
-    │
-    ├── CAIO ARCHITECT — Tech Lead
-    │   ├── Paulo Dev
-    │   ├── Felipe Frontend
-    │   ├── Bruno Backend
-    │   ├── Diego Data
-    │   ├── Nina AI
-    │   ├── Sofia Security
-    │   └── Gustavo DevOps
-    │
-    └── CLONE DO DONO
-        Fronteira Marketing → Vendas; não pertence à squad de Marketing.</div>
-      <div class="note">A apresentação já está completa com ilustrações vetoriais locais. Para versão premium, gere as caricaturas com os prompts em <strong>docs/prompts-caricaturas-time-amps-tech.md</strong> e substitua os SVGs em <strong>docs/assets/agentes/</strong>.</div>
-    </div>
-    <footer class="footer"><span>AMPS Tech</span><span>Organograma</span></footer>
+    <div class="footer"><span>AMPS Tech — Tecnologia e Consultoria</span></div>
   </section>
 </body>
 </html>
