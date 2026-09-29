@@ -4,8 +4,9 @@ Este repositório contém a apresentação institucional da estrutura operaciona
 
 ## Arquivos principais
 
-- `docs/apresentacao-institucional-amps-tech.html` — apresentação HTML autocontida, sem imagens de agentes.
+- `docs/apresentacao-institucional-amps-tech.html` — apresentação HTML autocontida, sem imagens de agentes, com logo AMPS Tech aplicado.
 - `docs/apresentacao-institucional-amps-tech.pdf` — versão exportada para PDF a partir do navegador.
+- `docs/assets/logo-amps-tech.jpg` — logo institucional usado na apresentação.
 
 ## Direção visual
 
